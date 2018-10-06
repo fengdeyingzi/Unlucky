@@ -1,0 +1,10 @@
+android/bin/
+android/gen/
+android/obj/
+android/libs/*/*.so
+core/bin/
+core/gen/
+core/obj/
+core/libs/*/*.so
+
+lib/

@@ -5,16 +5,19 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.scenes.scene2d.*;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.utils.Align;
 import com.unlucky.entity.Player;
 import com.unlucky.event.EventState;
 import com.unlucky.inventory.Equipment;
@@ -523,7 +526,7 @@ public class InventoryUI extends UI {
                             }
                         }
 
-                    }.show(stage).getTitleLabel().setAlignment(Align.center);
+                    }.show(stage); //.getTitleLabel().setAlignment(Align.center);
                 }
             }
         });
@@ -559,7 +562,7 @@ public class InventoryUI extends UI {
                             }
                         }
 
-                    }.show(stage).getTitleLabel().setAlignment(Align.center);
+                    }.show(stage); //.getTitleLabel().setAlignment(Align.center);
                 }
             }
         });
@@ -595,7 +598,7 @@ public class InventoryUI extends UI {
                     player.inventory.addItemAtIndex(scroll, scroll.index);
                 }
             }
-        }.show(stage).getTitleLabel().setAlignment(Align.center);
+        }.show(stage); //.getTitleLabel().setAlignment(Align.center);
     }
 
     /**
@@ -619,7 +622,7 @@ public class InventoryUI extends UI {
                     tooltip.setVisible(false);
                 }
 
-            }.show(stage).getTitleLabel().setAlignment(Align.center);
+            }.show(stage); //.getTitleLabel().setAlignment(Align.center);
             return;
         }
 
@@ -653,7 +656,7 @@ public class InventoryUI extends UI {
                     invButtonLabels[1].setText("SELL FOR\n" + currentItem.sell + " g");
                 }
 
-            }.show(stage).getTitleLabel().setAlignment(Align.center);
+            }.show(stage); //.getTitleLabel().setAlignment(Align.center);
         }
         // enchant failed
         else {
@@ -678,7 +681,7 @@ public class InventoryUI extends UI {
                         unselectItem();
                     }
 
-                }.show(stage).getTitleLabel().setAlignment(Align.center);
+                }.show(stage); //.getTitleLabel().setAlignment(Align.center);
                 game.save.save();
             } else {
                 new Dialog("Fail!", rm.dialogSkin) {
@@ -698,7 +701,7 @@ public class InventoryUI extends UI {
                         tooltip.setVisible(true);
                     }
 
-                }.show(stage).getTitleLabel().setAlignment(Align.center);
+                }.show(stage); //.getTitleLabel().setAlignment(Align.center);
             }
         }
     }
@@ -739,7 +742,7 @@ public class InventoryUI extends UI {
                 }
             }
 
-        }.show(stage).getTitleLabel().setAlignment(Align.center);
+        }.show(stage); //.getTitleLabel().setAlignment(Align.center);
     }
 
     private void unselectItem() {

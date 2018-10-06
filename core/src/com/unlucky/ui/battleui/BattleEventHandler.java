@@ -7,21 +7,20 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.Align;
 import com.unlucky.battle.StatusEffect;
 import com.unlucky.entity.Player;
 import com.unlucky.entity.enemy.Boss;
 import com.unlucky.event.Battle;
 import com.unlucky.event.BattleEvent;
+import com.unlucky.event.BattleState;
 import com.unlucky.event.EventState;
 import com.unlucky.inventory.Item;
 import com.unlucky.map.TileMap;
-import com.unlucky.map.WeatherType;
 import com.unlucky.resource.ResourceManager;
 import com.unlucky.resource.Util;
 import com.unlucky.screen.GameScreen;
-import com.unlucky.event.BattleState;
 
 /**
  * Renders a dialog box that creates text animations given text
@@ -85,7 +84,7 @@ public class BattleEventHandler extends BattleUI {
         textLabel.setFontScale(1.7f / 2);
         textLabel.setPosition(8, 6);
         textLabel.setSize(175, 26);
-        textLabel.setAlignment(Align.topLeft);
+        textLabel.setAlignment(Align.left);
         stage.addActor(textLabel);
 
         clickLabel = new Label("", font);

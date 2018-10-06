@@ -12,11 +12,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.Align;
 import com.unlucky.main.Unlucky;
-import com.unlucky.map.WeatherType;
 import com.unlucky.resource.ResourceManager;
 
 /**
@@ -292,4 +291,12 @@ public class SettingsScreen extends MenuExtensionScreen {
         stage.draw();
     }
 
+	@Override
+	public void resize(int width, int height)
+	{
+		// TODO: Implement this method
+		super.resize(width, height);
+		this.stage.getViewport().update(width,height);
+	}
+	
 }

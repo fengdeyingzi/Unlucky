@@ -8,10 +8,15 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.unlucky.main.Unlucky;
 import com.unlucky.resource.ResourceManager;
@@ -104,7 +109,7 @@ public abstract class SelectScreen extends AbstractScreen {
         fullDescLabel.setTouchable(Touchable.disabled);
         fullDescLabel.setFontScale(0.5f);
         fullDescLabel.setWrap(true);
-        fullDescLabel.setAlignment(Align.topLeft);
+        fullDescLabel.setAlignment(Align.left);
         stage.addActor(fullDescLabel);
     }
 

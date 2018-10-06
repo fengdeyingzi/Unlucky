@@ -8,9 +8,9 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.utils.Align;
 import com.unlucky.inventory.Item;
 import com.unlucky.main.Unlucky;
 import com.unlucky.map.GameMap;
@@ -83,7 +83,7 @@ public class VictoryScreen extends AbstractScreen {
         info = new Label("", new Label.LabelStyle(rm.pixel10, Color.WHITE));
         info.setFontScale(0.5f);
         info.setWrap(true);
-        info.setAlignment(Align.topLeft);
+        info.setAlignment(Align.left);
         info.setSize(112, 50);
         info.setPosition(Unlucky.V_WIDTH / 2 - 70 + 4, 38);
         stage.addActor(info);
@@ -181,4 +181,12 @@ public class VictoryScreen extends AbstractScreen {
         super.render(dt);
     }
 
+	@Override
+	public void resize(int width, int height)
+	{
+		// TODO: Implement this method
+		super.resize(width, height);
+		this.stage.getViewport().update(width,height);
+	}
+	
 }

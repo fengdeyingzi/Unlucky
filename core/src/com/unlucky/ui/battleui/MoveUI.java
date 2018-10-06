@@ -2,21 +2,21 @@ package com.unlucky.ui.battleui;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.unlucky.battle.Move;
 import com.unlucky.battle.SpecialMove;
 import com.unlucky.battle.StatusEffect;
 import com.unlucky.entity.Player;
-import com.unlucky.event.*;
+import com.unlucky.event.Battle;
+import com.unlucky.event.BattleEvent;
 import com.unlucky.map.TileMap;
 import com.unlucky.resource.ResourceManager;
 import com.unlucky.resource.Util;
@@ -193,7 +193,7 @@ public class MoveUI extends BattleUI {
             // move names
             moveNameLabels[i] = new Label(player.getMoveset().names[i], font);
             moveNameLabels[i].setSize(Util.MOVE_WIDTH, Util.MOVE_HEIGHT);
-            moveNameLabels[i].setAlignment(Align.topLeft);
+            moveNameLabels[i].setAlignment(Align.left);
             moveNameLabels[i].setFontScale(0.62f);
             moveNameLabels[i].setTouchable(Touchable.disabled);
 
@@ -251,28 +251,28 @@ public class MoveUI extends BattleUI {
         Label.LabelStyle font = new Label.LabelStyle(bitmapFont, new Color(255, 255, 255, 255));
 
         optionNameLabels[0] = new Label("", font);
-        optionNameLabels[0].setAlignment(Align.topLeft);
+        optionNameLabels[0].setAlignment(Align.left);
         optionNameLabels[0].setSize(55, 25);
         optionNameLabels[0].setFontScale(0.62f);
         optionNameLabels[0].setTouchable(Touchable.disabled);
         optionNameLabels[0].setPosition(2 * Util.MOVE_WIDTH + 7, Util.MOVE_HEIGHT - 6);
 
         optionDescLabels[0] = new Label("", font);
-        optionDescLabels[0].setAlignment(Align.topLeft);
+        optionDescLabels[0].setAlignment(Align.left);
         optionDescLabels[0].setSize(55, 25);
         optionDescLabels[0].setFontScale(0.7f / 2);
         optionDescLabels[0].setTouchable(Touchable.disabled);
         optionDescLabels[0].setPosition(2 * Util.MOVE_WIDTH + 7, Util.MOVE_HEIGHT - 12);
 
         optionNameLabels[1] = new Label("Run", font);
-        optionNameLabels[1].setAlignment(Align.topLeft);
+        optionNameLabels[1].setAlignment(Align.left);
         optionNameLabels[1].setSize(55, 25);
         optionNameLabels[1].setFontScale(0.62f);
         optionNameLabels[1].setTouchable(Touchable.disabled);
         optionNameLabels[1].setPosition(2 * Util.MOVE_WIDTH + 7, -6);
 
         optionDescLabels[1] = new Label("7% chance to run\nfrom a battle", font);
-        optionDescLabels[1].setAlignment(Align.topLeft);
+        optionDescLabels[1].setAlignment(Align.left);
         optionDescLabels[1].setSize(55, 25);
         optionDescLabels[1].setFontScale(0.7f / 2);
         optionDescLabels[1].setTouchable(Touchable.disabled);

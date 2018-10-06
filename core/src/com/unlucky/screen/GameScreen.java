@@ -234,6 +234,16 @@ public class GameScreen extends AbstractScreen {
 
         //game.profile("GameScreen");
     }
+	
+
+	@Override
+	public void resize(int width, int height)
+	{
+		// TODO: Implement this method
+		super.resize(width, height);
+		this.stage.getViewport().update(width,height);
+	}
+	
 
     public void dispose() {
         super.dispose();

@@ -6,11 +6,18 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup;
+import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.unlucky.battle.SpecialMove;
 import com.unlucky.battle.SpecialMoveset;
@@ -171,7 +178,7 @@ public class SpecialMoveScreen extends MenuExtensionScreen {
                 if (!game.player.settings.muteSfx) rm.buttonclick2.play(game.player.settings.sfxVolume);
             }
         };
-        warningFullDialog.getTitleLabel().setAlignment(Align.center);
+        //warningFullDialog.getTitleLabel().setAlignment(Align.center);
     }
 
     @Override
@@ -286,7 +293,7 @@ public class SpecialMoveScreen extends MenuExtensionScreen {
                     protected void result(Object object) {
                         if (!game.player.settings.muteSfx) rm.buttonclick2.play(game.player.settings.sfxVolume);
                     }
-                }.show(stage).getTitleLabel().setAlignment(Align.center);
+                }.show(stage); //.getTitleLabel().setAlignment(Align.center);
                 return;
             }
             // add smove
@@ -485,4 +492,12 @@ public class SpecialMoveScreen extends MenuExtensionScreen {
         });
     }
 
+	@Override
+	public void resize(int width, int height)
+	{
+		// TODO: Implement this method
+		super.resize(width, height);
+		this.stage.getViewport().update(width,height);
+	}
+	
 }

@@ -12,10 +12,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.utils.Align;
+//import com.badlogic.gdx.utils.Align;
 import com.unlucky.effects.Moving;
 import com.unlucky.main.Unlucky;
 import com.unlucky.resource.ResourceManager;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 
 /**
  * The main menu screen of the game that holds all access points for playing,
@@ -284,6 +285,18 @@ public class MenuScreen extends MenuExtensionScreen {
             letters[i].setPosition(titleMoves[i].position.x, titleMoves[i].position.y);
         }
     }
+
+	@Override
+	public void resize(int width, int height)
+	{
+		// TODO: Implement this method
+		super.resize(width, height);
+		this.stage.getViewport().update(width,height);
+	}
+	
+	
+	
+	
     /**
      * Resets and starts the title animation on every transition to this screen
      */

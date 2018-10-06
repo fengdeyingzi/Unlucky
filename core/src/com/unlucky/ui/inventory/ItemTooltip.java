@@ -5,7 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
-import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.unlucky.inventory.Item;
 
 /**
@@ -28,7 +28,7 @@ public class ItemTooltip extends Window {
         super("", skin);
         desc = new Label("", skin);
         desc.setFontScale(0.5f);
-        this.getTitleLabel().setFontScale(0.5f);
+       // this.getTitleLabel().setFontScale(0.5f);
 
         common = new Label.LabelStyle(skin.getFont("default-font"), new Color(1, 1, 1, 1));
         rare = new Label.LabelStyle(skin.getFont("default-font"), new Color(0, 200 / 255.f, 0, 1));
@@ -45,7 +45,8 @@ public class ItemTooltip extends Window {
         this.setTouchable(Touchable.disabled);
         this.setVisible(false);
         this.setMovable(false);
-        this.setOrigin(Align.bottomLeft);
+        //this.setOrigin(Align.bottomLeft);
+		
     }
 
     /**
@@ -68,19 +69,20 @@ public class ItemTooltip extends Window {
     public void updateText(Item item) {
         switch (item.rarity) {
             case 0:
-                this.getTitleLabel().setStyle(common);
+                //this.getTitleLabel().setStyle(common);
                 break;
             case 1:
-                this.getTitleLabel().setStyle(rare);
+                //this.getTitleLabel().setStyle(rare);
                 break;
             case 2:
-                this.getTitleLabel().setStyle(epic);
+                //this.getTitleLabel().setStyle(epic);
                 break;
             case 3:
-                this.getTitleLabel().setStyle(legendary);
+                //this.getTitleLabel().setStyle(legendary);
                 break;
         }
-        this.getTitleLabel().setText(item.labelName);
+		
+        //this.getTitleLabel().setText(item.labelName);
         desc.setText(item.getFullDesc());
 
         pack();

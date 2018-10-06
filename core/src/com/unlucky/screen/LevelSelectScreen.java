@@ -4,10 +4,14 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.unlucky.main.Unlucky;
 import com.unlucky.map.Level;
@@ -126,7 +130,7 @@ public class LevelSelectScreen extends SelectScreen {
                                 if (object.equals("yes")) enterGame();
                             }
 
-                        }.show(stage).getTitleLabel().setAlignment(Align.center);
+                        }.show(stage); //.getTitleLabel().setAlignment(Align.center);
                     } else {
                         enterGame();
                     }
@@ -237,4 +241,12 @@ public class LevelSelectScreen extends SelectScreen {
         super.render(dt, worldIndex);
     }
 
+	@Override
+	public void resize(int width, int height)
+	{
+		// TODO: Implement this method
+		super.resize(width, height);
+		this.stage.getViewport().update(width,height);
+	}
+	
 }

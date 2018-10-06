@@ -7,9 +7,14 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Window;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.Align;
 import com.unlucky.effects.Moving;
 import com.unlucky.entity.Player;
 import com.unlucky.event.EventState;
@@ -130,7 +135,7 @@ public class Hud extends UI {
                 }
             }
         };
-        settingsDialog.getTitleLabel().setAlignment(Align.center);
+        //settingsDialog.getTitleLabel().setAlignment(Align.center);
         settingsDialog.getBackground().setMinWidth(70);
     }
 
@@ -181,8 +186,8 @@ public class Hud extends UI {
         int levelIndex = gameScreen.gameMap.levelIndex;
         String worldName = rm.worlds.get(worldIndex).name;
         String levelName = rm.worlds.get(worldIndex).levels[levelIndex].name;
-
-        levelDescriptor.getTitleLabel().setText("WORLD " + (worldIndex + 1) + " : " + "LEVEL " + (levelIndex + 1));
+ 
+        //levelDescriptor.getTitleLabel().setText("WORLD " + (worldIndex + 1) + " : " + "LEVEL " + (levelIndex + 1));
         levelDesc.setText(worldName + "\n" + levelName + "\n" + "AVG LVL: " + rm.worlds.get(worldIndex).levels[levelIndex].avgLevel);
         levelDescriptor.setVisible(true);
         levelDescriptor.pack();
@@ -260,8 +265,8 @@ public class Hud extends UI {
      */
     private void createLevelDescriptor() {
         levelDescriptor = new Window("", rm.skin);
-        levelDescriptor.getTitleLabel().setFontScale(0.5f);
-        levelDescriptor.getTitleLabel().setAlignment(Align.center);
+       // levelDescriptor.getTitleLabel().setFontScale(0.5f);
+        //levelDescriptor.getTitleLabel().setAlignment(Align.center);
         levelDescriptor.setMovable(false);
         levelDescriptor.setTouchable(Touchable.disabled);
         levelDescriptor.setKeepWithinStage(false);
@@ -400,7 +405,7 @@ public class Hud extends UI {
                 }
                 else settingsDialog.show(stage);
             }
-        }.show(stage).getTitleLabel().setAlignment(Align.center);
+        }.show(stage); //.getTitleLabel().setAlignment(Align.center);
     }
 
     /**

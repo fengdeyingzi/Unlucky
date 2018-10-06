@@ -152,4 +152,12 @@ public class WorldSelectScreen extends SelectScreen {
         super.render(dt, worldIndex);
     }
 
+	@Override
+	public void resize(int width, int height)
+	{
+		// TODO: Implement this method
+		super.resize(width, height);
+		this.stage.getViewport().update(width,height);
+	}
+	
 }

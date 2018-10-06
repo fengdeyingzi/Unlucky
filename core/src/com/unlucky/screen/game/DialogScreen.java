@@ -7,8 +7,8 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.Align;
 import com.unlucky.entity.Player;
 import com.unlucky.event.EventState;
 import com.unlucky.map.Tile;
@@ -73,7 +73,7 @@ public class DialogScreen extends UI {
         textLabel.setFontScale(1.7f / 2);
         textLabel.setPosition(8, 6);
         textLabel.setSize(350 / 2, 52 / 2);
-        textLabel.setAlignment(Align.topLeft);
+        textLabel.setAlignment(Align.left);
         stage.addActor(textLabel);
 
         clickLabel = new Label("", font);
